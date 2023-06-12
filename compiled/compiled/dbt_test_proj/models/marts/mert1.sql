@@ -4,5 +4,5 @@ select
     QuarterName,
     amnt,
     round(avg(amnt) over (partition by 1,2), 1) as avcc
-from {{ ref('rollp') }}
+from `manakova`.`factsales_fs_output`.`rollp`
 where amnt < 320000

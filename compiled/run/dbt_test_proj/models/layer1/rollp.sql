@@ -1,4 +1,8 @@
-with cats as (
+
+
+  create or replace view `manakova`.`factsales_fs_output`.`rollp`
+  OPTIONS()
+  as with cats as (
     select
         categoryid,
         category
@@ -35,5 +39,5 @@ res as (
     group by rollup (1,2,3)
 )
 
-select * from res
+select * from res;
 

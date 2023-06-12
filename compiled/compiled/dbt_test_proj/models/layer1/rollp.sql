@@ -36,4 +36,3 @@ res as (
 )
 
 select * from res
-

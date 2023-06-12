@@ -18,6 +18,7 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+target-path: "compiled"
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
@@ -32,6 +33,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_test_proj:
-    # Config indicated by + and applies to all files under models/example/
-    example:
+    +dataset: fs_output
+    rollp:
       +materialized: view
+    mert1:
+      +materialized: table
+

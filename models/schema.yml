@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: rollp
+    description: first layer
+    columns:
+      - name: country
+        description: Country name
+        tests:
+          - not_null
+#          - relationships:
+#              field: countryid
+#              to: ref('fs_couAB')
+      - name: category
+        tests:
+          - not_null
+      - name: QuarterName
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Q1', 'Q2', 'Q3', 'Q4']
+      - name: amnt
+        tests:
+#          - unique
+          - not_null
+
+  - name: mert1
+    columns:
+      - name: avcc
+        tests:
+          - not_null
+    
+
